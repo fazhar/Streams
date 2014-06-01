@@ -1,0 +1,45 @@
+@import "bootstrap";
+
+html {
+	overflow-y: auto;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+.container {
+	padding-top: 50px;
+	position: relative;
+}
+
+footer {
+	padding-right: 5%;
+	padding-left: 5%; 
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #e7e7e7;
+	color: #777777;
+	a {
+		color: #777777;
+		font-size: 11px;
+		&:hover {
+			text-decoration: none;
+		  	color: #dfdfdf;
+		}
+	}
+	small {
+		float: left;
+	}
+	ul {
+		float: right;
+		list-style: none;
+		li {
+	  		float: left;
+	  		margin-left: 10px;
+		}
+	}
+}
+
+
