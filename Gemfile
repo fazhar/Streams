@@ -23,7 +23,12 @@ gem 'growl', '1.0.3'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'sprockets', '2.11.0'
 
-gem 'omniauth'
+gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-identity'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
