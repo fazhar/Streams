@@ -1,0 +1,26 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.new {
+	padding-top: 25px;
+	text-align: center;
+
+	h3 {
+		padding-bottom: 10px;
+	}
+
+	.form-inline {
+		margin-left: 0;
+    	margin-right: 0;
+    	padding-bottom: 10px;
+	}
+
+	#email {
+		width: 100%;
+	}
+
+	button {
+		background-color: #1164b1;
+		color: white;
+	}
+}

@@ -1,3 +1,91 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home {
+	.jumbotron {
+		background-image: linear-gradient(to bottom, #1164b1 0, #0481BD 100%);
+		border-radius: 0px !important;
+		color: white;
+		width: 100%;
+
+		.col-md-7 p{
+			font-size: 17px;
+		}
+
+		.pager li > a, .pager li > span {
+			background-color: inherit;
+			color: white;
+			border: 2px solid white;
+		}
+
+		h2 {
+			padding-bottom: 10px;
+		}
+		img {
+			border-radius: 15px;
+		}
+	}
+
+	.how-it-works {
+		h3 {
+			padding-bottom: 10px;
+			padding-left: 20px;
+			color:#777777;
+		}
+
+		img {
+			width: 100%
+		}
+	}
+}
+
+.about, .contact, .help {
+	width: 95%;
+	padding-top: 25px;	
+}
+
+.contact {
+	text-align: center;
+
+	.pager li > a, .pager li > span {
+		border:none;
+		&:hover {
+			background-color: inherit;
+		}
+	}
+
+}
+
+.help {
+	text-align: left;
+	h4 {
+		padding-bottom: 15px;
+	}
+
+	h5 {
+		padding-top: 53px; 
+		margin-top: -53px;
+	}
+
+	.sidebar {
+	    margin-bottom: 20px;
+	}
+
+	.sidebar .nav>li>a {
+	    color: #999;
+	    padding: 4px 20px;
+	    font-size: 13px;
+	    font-weight: 400;
+	    white-space: pre-wrap;
+	}
+
+	/* active & hover links */
+	.sidebar .nav>.active>a, 
+	.sidebar .nav>li>a:hover, 
+	.sidebar .nav>li>a:focus {                
+	    text-decoration: none;          
+	    background-color: transparent;  
+	    border-left: 2px solid #1164b1; 
+	}
+}
