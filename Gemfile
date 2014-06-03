@@ -23,6 +23,8 @@ gem 'growl', '1.0.3'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'sprockets', '2.11.0'
 
+gem 'omniauth'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
 
