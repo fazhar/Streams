@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Streams::Application.config.secret_key_base = '3d39ab66015d66783a4c822759dda4247100f76c4055ab22528fadd5633377502a7f43febcf1007d830309431195a7b36c66ab00a16e306a947a78fd816912b7'
+Streams::Application.config.secret_key_base = ENV['SECRET_TOKEN']
