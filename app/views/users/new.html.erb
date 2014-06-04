@@ -4,36 +4,28 @@
 	<div class="container-fluid">
 		<div class="row">
 			<h3> Sign Up </h3>
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
+			<div class="col-sm-4 col-sm-offset-4">
 				<form role="form">
 					<div class="form-group">
-						<input type="text" class="form-control" id="username" placeholder="Enter a username">
-					</div>
-					<div class="form-inline">
-						<div class="form-group">
-							<input type="text" class="form-control" id="firstname" placeholder="First Name">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" id="lastname" placeholder="Last Name">
-						</div>
+						<input type="text" class="form-control" id="lastname" placeholder="First and last name">
 					</div>
 					<div class="form-group">
 						<input type="email" class="form-control" id="inputemail" placeholder="Enter your email">
 					</div>
-					<div class="form-inline">
-						<div class="form-group">
-							<input type="password" class="form-control" id="password" placeholder="password">
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" id="password" placeholder="confirm-password">
-						</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="password" placeholder="password">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="password" placeholder="confirm-password">
 					</div>
 					<button type="submit" class="btn btn-default">Sign Up</button>
 				</form>
+				<div class="omniauth-buttons">
+					<button type="button" class="btn btn-default btn-block btn-large" id="facebook-signin"><%= link_to "Sign Up with Facebook", "auth/facebook" %></button>
+					<button type="button" class="btn btn-default btn-block btn-large" id="twitter-signin"><%= link_to "Sign Up with Twitter", "auth/twitter" %></button>
+					<button type="button" class="btn btn-default btn-block btn-large" id="google-signin"><%= link_to "Sign Up with Google", "auth/google_oauth2" %></button>
+				</div>
 			</div>
-			<div class="col-md-4"></div>
-		
 		</div>
 	</div>
 </div>

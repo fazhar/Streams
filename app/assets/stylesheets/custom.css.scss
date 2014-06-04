@@ -15,6 +15,60 @@ body {
 	padding-right: 0px;
 }
 
+header {
+	.navbar {
+		margin-bottom: 0px;
+	}
+
+	a {
+		text-decoration: none;
+		color: #777777;
+		&:hover {
+			color: #777777;
+			text-decoration: none;
+		}
+	}
+}
+
+.modal {
+
+	text-align: center;
+
+	.omniauth-buttons {
+
+		display: inline-block;
+
+		a {
+			color: white;
+			font-size: 16px;
+			&:hover {
+				background-color: inherit;
+				text-decoration: none;
+			}
+		}
+
+		button {
+			line-height: 24px;
+			margin-bottom: 10px;
+			border-radius: 3px;
+			padding-left: 44px;
+			padding-right: 44px;
+		}
+
+		#facebook-signin {
+			background-color: #4963A4;
+		}
+
+		#twitter-signin {
+			background-color: #55ACEE;
+		}
+
+		#google-signin {
+			background-color: #DF4B31;
+		}
+	}
+}
+
 footer {
 	padding-right: 2%;
 	padding-left: 2%; 
