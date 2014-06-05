@@ -20,23 +20,8 @@
 		</div>
 
 		<%= render 'layouts/footer' %>
+		
+		<%= render 'users/signin' %>
 
-		<div class="modal fade_in" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-						<h4 class="modal-title" id="myModalLabel">Login</h4>
-					</div>
-					<div class="modal-body">
-						<div class="omniauth-buttons">
-							<button type="button" class="btn btn-default btn-block btn-large" id="facebook-signin"><%= link_to "#{image_tag("facebook_white.png", height: '23px', width: '23px')} Sign In with Facebook".html_safe, "auth/facebook" %></button>
-							<button type="button" class="btn btn-default btn-block btn-large" id="twitter-signin"><%= link_to "#{image_tag("twitter_white.png", height: '20px', width: '23px')} Sign In with Twitter".html_safe, "auth/twitter" %></button>
-							<button type="button" class="btn btn-default btn-block btn-large" id="google-signin"> <%= link_to "#{image_tag("google.png", height:'30px', width: '20px')} Sign In with Google".html_safe, "auth/google_oauth2" %></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</body>
-</html>
+</html>		
