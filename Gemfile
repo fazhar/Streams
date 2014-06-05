@@ -29,7 +29,6 @@ gem 'figaro'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-identity'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
