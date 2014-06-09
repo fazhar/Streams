@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-	def new
-	end
 
-	def feed
+	def home
 	end
 end
