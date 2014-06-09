@@ -1,0 +1,40 @@
+.user-nav {
+	
+	padding-top: 25px;
+	
+	.panel-heading {
+		padding-left: 0;
+		padding-right: 0;
+	    padding: 4px 0px;
+	}
+
+	a{
+		color: #999;
+	    padding: 4px 20px;
+	    font-size: 13px;
+	    font-weight: 400;
+	    white-space: pre-wrap;
+	}
+
+	.panel-body {
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+
+	.panel .nav>li>a {
+	    color: #999;
+	    padding: 3px 20px;
+	    font-size: 12px;
+	    font-weight: 300;
+	    white-space: pre-wrap;
+	}
+
+	/* active & hover links */
+	.panel .nav>.active>a, 
+	.panel .nav>li>a:hover, 
+	.panel .nav>li>a:focus {                
+	    text-decoration: none;          
+	    background-color: transparent;  
+	    border-left: 2px solid #1164b1; 
+	}
+}

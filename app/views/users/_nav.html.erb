@@ -1,0 +1,39 @@
+<div class="user-nav">
+	<div class="panel-group" id="user-nav">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h6="custom-h6">
+					<% if current_user %>
+						<%= link_to current_user.name, "#" %>
+					<% else %>
+						<%= link_to "Profile", "#" %>
+					<% end %>
+				</h6>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h6="custom-h6"><%= link_to "Feed", "#{}" %></h6>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h6="custom-h6"><%= link_to "My Streams", "#streams-nav", data: {toggle: "collapse", parent: "#user-nav"} %></h6>
+			</div>
+			<div id="streams-nav" class="panel-collapse collapse in">
+				<div class="panel-body">
+					<ul class=" nav nav-stacked">
+						<li><%= link_to "Stream 1", "#s1"%></li>
+						<li><%= link_to "Stream 2", "#s2"%></li>
+						<li><%= link_to "Stream 3", "#s3"%></li>
+					</ul>
+				</div>
+    		</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h6="custom-h6"><%= link_to "Settings", "#" %></h6>
+			</div>
+		</div>
+	</div>
+</div>

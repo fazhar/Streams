@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 	def choose_root
 		if current_user
-			redirect_to feed_path
+			redirect_to user_home_path
 		else
 			redirect_to home_path
 		end
