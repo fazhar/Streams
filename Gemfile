@@ -32,6 +32,7 @@ gem 'omniauth-google-oauth2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
+gem 'sass', '3.2.13'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.4.0'
