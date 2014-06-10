@@ -15,62 +15,58 @@ body {
 	padding-right: 0px;
 }
 
-$bgDefault: #1164b1;
-$bgHighlight: #1164b1;
-$colDefault: white;
-$colHighlight: #e7e7e7;
 .navbar-custom {
-	background-color: $bgDefault;
-	border-color: $bgHighlight;
+	background-color: #1164b1;
+	border-color: #1164b1;
 	.navbar-brand {
-		color: $colDefault;
+		color: #e7e7e7;
 		&:hover, &:focus { 
-			color: $colHighlight; 
+			color: white; 
 		}
 	}
 	.navbar-text {
-		color: $colDefault; 
+		color: #e7e7e7; 
 	}
 
 	.navbar-nav {
 		> li {
 			> a {
-				color: $colDefault;
+				color: #e7e7e7;
 				&:hover,  &:focus {
-					color: $colHighlight; 
+					color: white; 
 				}
 			}
 		}
 		> .active {
 			> a, > a:hover, > a:focus {
-				color: $colHighlight;
-				background-color: $bgHighlight; 
+				color: white;
+				background-color: #1164b1; 
 			}
 		}
 		> .open {
 			> a, > a:hover, > a:focus {
-				color: $colHighlight;
-				background-color: $bgHighlight; 
+				color: white;
+				background-color: #1164b1; 
 			}
 		}
 	}
 	.navbar-toggle {
-		border-color: $bgHighlight;
+		border-color: #1164b1;
 		&:hover, &:focus {
-			background-color: $bgHighlight; 
+			background-color: #1164b1; 
 		}
 		.icon-bar {
-			background-color: $colDefault; 
+			background-color: #e7e7e7; 
 		}
 	}
 	.navbar-collapse,
 	.navbar-form {
-		border-color: $colDefault; 
+		border-color: #e7e7e7; 
 	}
 	.navbar-link {
-		color: $colDefault;
+		color: #e7e7e7;
 		&:hover {
-			color: $colHighlight; 
+			color: white; 
 		}
 	}
 }
@@ -78,15 +74,15 @@ $colHighlight: #e7e7e7;
 @media (max-width: 767px) {
 	.navbar-default .navbar-nav .open .dropdown-menu {
 		> li > a {
-			color: $colDefault;
+			color: #e7e7e7;
 			&:hover, &:focus {
-				color: $colHighlight; 
+				color: white; 
 			}
 		}
 		> .active {
 			> a, > a:hover, > a:focus, {
-				color: $colHighlight;
-				background-color: $bgHighlight; 
+				color: white;
+				background-color: #1164b1; 
 			}
 		}
 	}
@@ -96,23 +92,29 @@ header {
 
 	.navbar {
 		margin-bottom: 0px;
+		li {
+			background-color: inherit;
+		}
 	}
 
 	a {
 		text-decoration: none;
 		color: white;
 		font-weight: 200;
+		background-color: inherit;
 		&:hover {
 			color: #e7e7e7;
+			background-color: inherit;
 			text-decoration: none;
 		}
 	}
 
 	.btn-custom {
 		background-color: inherit;
-		border: 1px solid white;
-		border-radius: 0;
+		border-radius: 0px;
 		color: white;
+		padding: 6px;
+		font-size: 12px;
 		font-weight: 200;
 		&:hover {
 			color: #e7e7e7;
@@ -171,12 +173,12 @@ header {
 footer {
 	padding-right: 2%;
 	padding-left: 2%; 
-	margin-top: 45px;
+	margin-top: 0px;
 	padding-top: 5px;
 	border-top: 1px solid #e7e7e7;
-	color: #777777;
+	color: #777;
 	a {
-		color: #777777;
+		color: #777;
 		font-size: 11px;
 		&:hover {
 			text-decoration: none;

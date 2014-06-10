@@ -11,6 +11,9 @@
 		</div>
 		<div class="collapse navbar-collapse" id="main-nav">
            <div class="navbar navbar-right">
+	            <button type="button" class="btn btn-custom navbar-btn"><%= link_to "ABOUT", about_path %></button>
+	            <button type="button" class="btn btn-custom navbar-btn"><%= link_to "CONTACT", contact_path %></button>
+	            <button type="button" class="btn btn-custom navbar-btn"><%= link_to "HELP", help_path %></button>
 	            <% if current_user %>
 					<button type="button" class="btn btn-custom navbar-btn"><%= link_to "SIGNOUT", logout_path %></button>
 				<% else %>
