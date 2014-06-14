@@ -1,5 +1,10 @@
 Streams::Application.routes.draw do
   	resources :users
+
+  	resources :conversations do
+  		resources :posts
+  	end
+
 	root 'application#choose_root'
 
 	#static_pages routes
@@ -15,4 +20,7 @@ Streams::Application.routes.draw do
 	match "/auth/:provider/callback", to: "sessions#create", via: 'get'
 	match "/auth/failure", to: "sessions#failure", via: 'get'
 	match "/logout", to: "sessions#destroy", via: 'get'
+
+	#conversations routes
+	match "/conversations/:id", to: "conversations#update", via: 'patch', as: "update_conversation"
 end
