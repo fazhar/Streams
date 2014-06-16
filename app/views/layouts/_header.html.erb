@@ -15,7 +15,17 @@
 	            <button type="button" class="btn btn-custom navbar-btn"><%= link_to "CONTACT", contact_path %></button>
 	            <button type="button" class="btn btn-custom navbar-btn"><%= link_to "HELP", help_path %></button>
 	            <% if current_user %>
-					<button type="button" class="btn btn-custom navbar-btn"><%= link_to "SIGNOUT", logout_path %></button>
+	            	<button type="button" class="btn btn-custom navbar-btn"><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-plus", data: {toggle: "tooltip", placement: "bottom"} , title: "Add a Stream"), new_conversation_path %></button>
+
+					<button class="btn btn-image-custom navbar-btn" type="button" id="dropdownMenu1" data-toggle="dropdown"><%= image_tag "http://placehold.it/30x30"%></button>
+					
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><%= link_to current_user.name, user_path(current_user), role: "menuitem", tabindex: "-1"%></li>
+						<li role="presentation"><%= link_to "My Streams", conversations_path, role: "menuitem", tabindex: "-1"%></li>
+						<li role="presentation"><%= link_to "Settings", user_path(current_user), role: "menuitem", tabindex: "-1"%></li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation"><%= link_to "Sign Out", logout_path, role: "menuitem", tabindex: "-1" %></li>
+					</ul>
 				<% else %>
 					<button type="button" class="btn btn-custom navbar-btn" data-toggle="modal" data-target="#login-modal">LOGIN</button>
 				<% end %>
