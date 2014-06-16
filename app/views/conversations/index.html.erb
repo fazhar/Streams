@@ -1,21 +1,11 @@
 <div class="stream-list">
-	<% if conversations %>
-		<% conversations.each do |conversation| %>
-			<div class="display-stream">
-				<h5 class="custom-h5">
-					<div class="title"><%= conversation.title %></div>
-					<nav>
-						<ul>
-							<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-zoom-in"), conversation_path(conversation) %></li>
-							<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), conversation_path(conversation), method: :delete, data: {confirm: 'Are you sure?'} %></li>
-							<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_path(conversation) %></li>
-						</ul> 
-					</nav>
-				</h5>
-				<%= conversation.description %>
-			</div>
+	<div class="container">
+		<% if conversations %>
+			<% conversations.each do |conversation| %>
+				<%= render conversation %>
+			<% end %>
+		<% else %>
+			<button type="button" class="btn btn-custom btn-block" data-toggle="modal" data-target="#new-post">Create a new Stream</button>
 		<% end %>
-	<% else %>
-		<button type="button" class="btn btn-custom btn-block" data-toggle="modal" data-target="#new-post">Create a new Stream</button>
-	<% end %>
+	</div>
 </div>

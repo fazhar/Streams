@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-	has_one :feed, inverse_of: :user
-	has_many :conversations, inverse_of: :user
-	has_many :posts, inverse_of: :user
+	has_one :feed, inverse_of: :user, dependent: :destroy
+	has_many :conversations, inverse_of: :user, dependent: :destroy
+	has_many :posts, inverse_of: :user, dependent: :destroy
 
 	def self.from_omniauth(auth)
 		find_by_provider_and_uid(auth["provider"], auth[:uid]) || create_with_omniauth(auth)

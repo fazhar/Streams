@@ -1,6 +1,35 @@
 <div class="user-show">
+	<div class="top-nav">
+		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), user_home_path, class: "pull-left" %></small>
+		<% if @user == current_user %>
+			<nav>
+				<ul>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-cog"), user_settings_path(@user) %></li>
+				</ul>
+			</nav>
+		<% end %>
+	</div>
 	<div class="container">
-		<h4 class="custom-h4"><%= current_user.name %></h4>
-
+		<h4 class="custom-h4"><%= @user.name %></h4>
+		<h5 class="custom-h5">About</h5>
+		<h5 class="custom-h5">Location</h5>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4">
+					<h5 class="custom-h5">Posts: <%= @user.posts.count %></h5>
+				</div>
+				<div class="col-md-4">
+					<h5 class="custom-h5">Streams: <%= @user.conversations.count %></h5>
+				</div>
+				<div class="col-md-4">
+					<h5 class="custom-h5">Following: 0</h5>
+				</div>
+			</div>
+		</div>
+		<h5 class="custom-h5">Following</h5>
+		<div class="created-streams">
+			<h5 class="custom-h5">Created</h5>
+			<%= render @user.conversations %>
+		</div>
 	</div>
 </div>

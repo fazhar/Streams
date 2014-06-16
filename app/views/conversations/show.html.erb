@@ -1,5 +1,5 @@
 <div class="stream-show">
-	<div class="stream-nav">
+	<div class="top-nav">
 		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), user_home_path, class: "pull-left" %></small>
 
 		<nav>
@@ -15,15 +15,8 @@
 		<div class="description"><%= @conversation.description %></div>
 		<button type="button" class="btn btn-custom btn-block" data-toggle="modal" data-target="#new-post">Add a Post</button>
 		<div class="post-show">
-			<% @conversation.posts.each do |post| %>
-				<div>
-					<h5><%= post.title %></h5>
-					<p>By: <%= post.user.name %></p>
-					<p><%= post.content %></p>
-				</div>
-			<% end %>
+			<%= render @conversation.posts %>
 		</div>
-
 	</div>
 
 	<%= render 'posts/new_post' %>
