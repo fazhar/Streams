@@ -24,4 +24,5 @@ Streams::Application.routes.draw do
 
 	#conversations routes
 	match "/conversations/:id", to: "conversations#update", via: 'patch', as: "update_conversation"
+	match "/conversations/:conversation_id/posts/:id", to: "posts#update", via: 'patch', as: "update_conversation_post"
 end

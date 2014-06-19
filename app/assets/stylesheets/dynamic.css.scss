@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.stream-new, .stream-show, .stream-edit, .stream-list, .user-show, .user-edit {
+.stream-new, .stream-show, .stream-edit, .stream-list, .user-show, .user-edit, .edit-post, .new-post {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	text-align: center;
@@ -32,6 +32,8 @@
 		padding-top: 25px;
 	}
 }
+
+
 
 .display-stream {
 	min-height: 20px;
@@ -76,6 +78,80 @@
 				color: #1164b1;
 			}
 		}
+	}
+}
+
+.display-post {
+
+	.left {
+		color: #999;
+		text-align: left;
+		.custom-h5 {
+			color:white;
+			font-size: 14px;
+			border: none;
+			font-weight: 300;
+			padding-bottom: 5px;
+			.title {
+				float: left;
+			}
+			nav {
+				ul {
+					display: inline-block;
+					list-style: none;
+					float: right;
+					li {
+			  			float: left;
+			  			margin-left: 10px;
+					}
+				}
+			}
+
+			a, span {
+				color: white;
+				font-size: 16px;
+				&:hover {
+					text-decoration: none;
+					color: #e7e7e7;
+				}
+			}
+		}
+	}
+
+	.right {
+		vertical-align: bottom;
+		.thumbnail-custom {
+			display: block;
+			padding-top: 4px;
+			margin-bottom: 20px;
+			line-height: 1.428571429;
+			background-color: #eee;
+			border: 1px solid #428bca;
+			border-radius: 4px;
+			-webkit-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+			margin-bottom: 4px;
+			text-align: center;
+
+			img {
+				position: center;
+				margin-top: 5px;
+				margin-bottom: 5px;
+				border: 2px solid #999;
+			}
+
+			.caption {
+				padding: 5px;
+				margin-top: 4px;
+				border-top: 1px solid #428bca;
+				background-color: #428bca;
+				color: white;
+				font-weight: 300px;
+			}
+		}
+
+
 	}
 }
 

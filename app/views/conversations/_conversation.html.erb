@@ -1,13 +1,15 @@
 <div class="display-stream">
 	<h5 class="custom-h5">
 		<div class="title"><%= conversation.title %> <span class="name">by: <%= conversation.user.name %></span></div>
-		<nav>
-			<ul>
-				<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-zoom-in"), conversation_path(conversation) %></li>
-				<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_path(conversation) %></li>
-				<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), conversation_path(conversation), method: :delete, data: {confirm: 'Are you sure?'} %></li>
-			</ul> 
-		</nav>
+		<% if current_user == conversation.user %>
+			<nav>
+				<ul>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-zoom-in"), conversation_path(conversation) %></li>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_path(conversation) %></li>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), conversation_path(conversation), method: :delete, data: {confirm: 'Are you sure?'} %></li>
+				</ul> 
+			</nav>
+		<% end %>
 	</h5>
-	<%= conversation.description %>
+	<p class="wordwrap"><%= conversation.description %></p>
 </div>

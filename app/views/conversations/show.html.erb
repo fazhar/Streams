@@ -1,23 +1,24 @@
 <div class="stream-show">
 	<div class="top-nav">
-		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), user_home_path, class: "pull-left" %></small>
-
-		<nav>
-			<ul>
-				<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_path(@conversation) %></li>
-				<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), conversation_path(@conversation), method: :delete, data: {confirm: 'Are you sure?'} %></li>
-			</ul> 
-		</nav>
+		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), root_path, class: "pull-left" %></small>
+		<% if current_user == @conversation.user %>
+			<nav>
+				<ul>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_path(@conversation) %></li>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), conversation_path(@conversation), method: :delete, data: {confirm: 'Are you sure?'} %></li>
+				</ul> 
+			</nav>
+		<% end %>
 	</div>
 
 	<div class="container">
 		<h4 class="custom-h4"><%= @conversation.title %></h4>
 		<div class="description"><%= @conversation.description %></div>
-		<button type="button" class="btn btn-custom btn-block" data-toggle="modal" data-target="#new-post">Add a Post</button>
+		<% if current_user %>
+			<%= link_to button_tag("Add a Post", class: "btn btn-custom btn-block"), new_conversation_post_path(@conversation) %>
+		<% end %>
 		<div class="post-show">
 			<%= render @conversation.posts %>
 		</div>
 	</div>
-
-	<%= render 'posts/new_post' %>
 </div>

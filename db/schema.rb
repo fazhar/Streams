@@ -11,36 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612091427) do
+ActiveRecord::Schema.define(version: 20140619221157) do
 
   create_table "conversations", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "feeds_id"
     t.integer  "posts_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "conversations", ["feeds_id"], name: "index_conversations_on_feeds_id"
   add_index "conversations", ["posts_id"], name: "index_conversations_on_posts_id"
   add_index "conversations", ["user_id"], name: "index_conversations_on_user_id"
 
-  create_table "conversations_feeds", id: false, force: true do |t|
-    t.integer "conversation_id", null: false
-    t.integer "feed_id",         null: false
-  end
-
-  create_table "feeds", force: true do |t|
+  create_table "follows", force: true do |t|
     t.integer  "user_id"
-    t.integer  "conversations_id"
+    t.integer  "conversation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "feeds", ["conversations_id"], name: "index_feeds_on_conversations_id"
-  add_index "feeds", ["user_id"], name: "index_feeds_on_user_id"
+  add_index "follows", ["conversation_id"], name: "index_follows_on_conversation_id"
+  add_index "follows", ["user_id"], name: "index_follows_on_user_id"
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -58,7 +51,6 @@ ActiveRecord::Schema.define(version: 20140612091427) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.integer  "feed_id"
     t.integer  "conversations_id"
     t.integer  "posts_id"
     t.datetime "created_at"
@@ -66,7 +58,6 @@ ActiveRecord::Schema.define(version: 20140612091427) do
   end
 
   add_index "users", ["conversations_id"], name: "index_users_on_conversations_id"
-  add_index "users", ["feed_id"], name: "index_users_on_feed_id"
   add_index "users", ["posts_id"], name: "index_users_on_posts_id"
 
 end

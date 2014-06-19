@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-	has_one :feed, inverse_of: :user, dependent: :destroy
 	has_many :conversations, inverse_of: :user, dependent: :destroy
 	has_many :posts, inverse_of: :user, dependent: :destroy
+	has_many :follows
+	has_many :followed_conversations, class_name: "Conversation", through: :follows, dependent: :destroy, source: "User"
 
 	def self.from_omniauth(auth)
 		find_by_provider_and_uid(auth["provider"], auth[:uid]) || create_with_omniauth(auth)
@@ -14,4 +15,5 @@ class User < ActiveRecord::Base
 			user.name = auth["info"]["name"]
 		end
 	end
+
 end

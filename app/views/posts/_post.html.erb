@@ -1,9 +1,37 @@
 <div class="display-post">
-	<div class= "panel panel-default">
-		<div class="panel-heading"><h5><%= post.title %></h5></div>
-		<div class="panel-body">
-			<p>By: <%= post.user.name %></p>
-			<p><%= post.content %></p>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-10 col-md-10">
+				<div class="left">
+					<div class= "panel panel-primary">
+						<div class="panel-heading">
+							<h5 class="custom-h5">
+								<div class="title"><%= post.title %></div>
+								<nav>
+									<ul>
+										<% if current_user == post.user %>
+											<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_post_path(post.conversation, post) %></li>
+											<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), [post.conversation, post], method: :delete, data: {confirm: 'Are you sure?'} %></li> 
+										<% end %>
+										<li class="visible-xs"><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-user"), user_path(post.user) %></li> 
+									</ul>
+								</nav>
+							</h5>
+						</div>
+						<div class="panel-body">
+							<p class="wordwrap"><%= post.content %></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2 hidden-xs">
+				<div class="right">
+					<div class="thumbnail-custom">
+						<%= image_tag "http://placehold.it/130x130", class: "img-circle hidden-xs", width: "75px", height: "75px" %>
+						<div class="caption"><%= post.user.name %></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

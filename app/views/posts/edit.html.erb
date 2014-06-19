@@ -1,22 +1,20 @@
-<div class="stream-edit">
+<div class="edit-post">
+	<% if @post.errors.any? %>
+		<%= render 'posts/error_explain' %>
+	<% end %>
 	<div class="top-nav">
 		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), conversation_path(@conversation), class: "pull-left" %></small>
 	</div>
-
 	<div class="container">
-		<% if @conversation.errors.any? %>
-			<%= render 'conversations/error_explain' %>
-		<% end %>
-		<h4 class="custom-h4"> Edit Stream </h4>
-		<%= form_for :conversation, url: update_conversation_path(@conversation), method: :patch do |f| %>
+		<h4 class="custom-h4">Edit a Post</h4>
+		<%= form_for :post,  url: update_conversation_post_path(@conversation, @post), method: :patch do |f| %>
 			<div class="form-group">
 				<%= f.text_field :title, class: "form-control", placeholder: "Title" %>
 			</div>
 			<div class="form-group">
-				<%= f.text_area :description, class: "form-control", placeholder: "Description of your Stream" %>
+				<%= f.text_area :content, class: "form-control", placeholder: "Content" %>
 			</div>
 			<%= f.submit "Save", type: "submit", class: "btn btn-custom" %>
 		<% end %>
 	</div>
-
 </div>

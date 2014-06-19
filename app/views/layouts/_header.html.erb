@@ -11,24 +11,26 @@
 		</div>
 		<div class="collapse navbar-collapse" id="main-nav">
            <div class="navbar navbar-right">
-	            <button type="button" class="btn btn-custom navbar-btn"><%= link_to "ABOUT", about_path %></button>
-	            <button type="button" class="btn btn-custom navbar-btn"><%= link_to "CONTACT", contact_path %></button>
-	            <button type="button" class="btn btn-custom navbar-btn"><%= link_to "HELP", help_path %></button>
-	            <% if current_user %>
-	            	<button type="button" class="btn btn-custom navbar-btn"><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-plus", data: {toggle: "tooltip", placement: "bottom"} , title: "Add a Stream"), new_conversation_path %></button>
-
-					<button class="btn btn-image-custom navbar-btn" type="button" id="dropdownMenu1" data-toggle="dropdown"><%= image_tag "http://placehold.it/30x30"%></button>
-					
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-						<li role="presentation"><%= link_to current_user.name, user_path(current_user), role: "menuitem", tabindex: "-1"%></li>
-						<li role="presentation"><%= link_to "My Streams", conversations_path, role: "menuitem", tabindex: "-1"%></li>
-						<li role="presentation"><%= link_to "Settings", user_path(current_user), role: "menuitem", tabindex: "-1"%></li>
-						<li role="presentation" class="divider"></li>
-						<li role="presentation"><%= link_to "Sign Out", logout_path, role: "menuitem", tabindex: "-1" %></li>
-					</ul>
-				<% else %>
-					<button type="button" class="btn btn-custom navbar-btn" data-toggle="modal" data-target="#login-modal">LOGIN</button>
-				<% end %>
+	            <ul class="nav navbar-nav">
+		            <% if current_user %>
+		            	<li><button type="button" class="btn btn-custom navbar-btn hidden-xs"><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-plus", data: {toggle: "tooltip", placement: "bottom"} , title: "Add a Stream"), new_conversation_path %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn hidden-xs"><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-align-justify", data: {toggle: "tooltip", placement: "bottom"} , title: "My Streams"), conversations_path %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn hidden-xs"><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-cog", data: {toggle: "tooltip", placement: "bottom"} , title: "Settings"), user_settings_path(current_user) %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn hidden-xs"><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-log-out", data: {toggle: "tooltip", placement: "bottom"} , title: "Sign Out"), logout_path %></button></li>
+		            	<li><button class="btn btn-image-custom navbar-btn hidden-xs" type="button"><%= link_to image_tag("http://placehold.it/30x30", class: "img-circle"), user_path(current_user) %></button></li>
+		            	
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "PROFILE", user_path(current_user) %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "ADD STREAM", new_conversation_path %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "MY STREAMS", conversations_path %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "SETTINGS", user_settings_path(current_user) %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "SIGN OUT", logout_path %></button></li>
+					<% else %>
+						<li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "ABOUT", about_path %></button></li>
+			            <li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "CONTACT", contact_path %></button></li>
+			            <li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "HELP", help_path %></button></li>
+						<li><button type="button" class="btn btn-custom navbar-btn" data-toggle="modal" data-target="#login-modal">LOGIN</button></li>
+					<% end %>
+				</ul>
 			</div>
 		</div>
 	</div>
