@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619221157) do
+ActiveRecord::Schema.define(version: 20140619224012) do
 
   create_table "conversations", force: true do |t|
     t.string   "title"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20140619221157) do
     t.integer  "posts_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "follows_id"
   end
 
+  add_index "conversations", ["follows_id"], name: "index_conversations_on_follows_id"
   add_index "conversations", ["posts_id"], name: "index_conversations_on_posts_id"
   add_index "conversations", ["user_id"], name: "index_conversations_on_user_id"
 
@@ -55,9 +57,11 @@ ActiveRecord::Schema.define(version: 20140619221157) do
     t.integer  "posts_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "follows_id"
   end
 
   add_index "users", ["conversations_id"], name: "index_users_on_conversations_id"
+  add_index "users", ["follows_id"], name: "index_users_on_follows_id"
   add_index "users", ["posts_id"], name: "index_users_on_posts_id"
 
 end

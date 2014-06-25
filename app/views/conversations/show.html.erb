@@ -1,14 +1,16 @@
 <div class="stream-show">
 	<div class="top-nav">
-		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), root_path, class: "pull-left" %></small>
-		<% if current_user == @conversation.user %>
-			<nav>
-				<ul>
-					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_path(@conversation) %></li>
-					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), conversation_path(@conversation), method: :delete, data: {confirm: 'Are you sure?'} %></li>
-				</ul> 
-			</nav>
-		<% end %>
+		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left", data: {toggle: "tooltip", placement: "top"} , title: "Back"), root_path, class: "pull-left" %></small>
+		<nav>
+			<ul>
+				<% if current_user == @conversation.user %>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil", data: {toggle: "tooltip", placement: "top"} , title: "Edit"), edit_conversation_path(@conversation) %></li>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove", data: {toggle: "tooltip", placement: "top"} , title: "Delete"), conversation_path(@conversation), method: :delete, data: {confirm: 'Are you sure?'} %></li>
+				<% else %>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-user"), user_path(@conversation.user) %></li>
+				<% end %>
+			</ul> 
+		</nav>
 	</div>
 
 	<div class="container">

@@ -14,7 +14,7 @@ Streams::Application.routes.draw do
   	match '/contact', to: 'static_pages#contact', via: 'get'
 
   	#users routes
-	match '/user_home', to: 'users#home', via: 'get'
+	match '/user/home', to: 'users#home', via: 'get', as: "user_home"
 	match '/user/:id/settings', to: 'users#settings', via: 'get', as: "user_settings"
 
 	#sessions routes
@@ -25,4 +25,6 @@ Streams::Application.routes.draw do
 	#conversations routes
 	match "/conversations/:id", to: "conversations#update", via: 'patch', as: "update_conversation"
 	match "/conversations/:conversation_id/posts/:id", to: "posts#update", via: 'patch', as: "update_conversation_post"
+	match "/conversations/:id/follow", to: 'conversations#follow', via: 'post', as: "follow_conversation"
+	match "/conversations/:id/unfollow", to: 'conversations#unfollow', via: 'delete', as: "unfollow_conversation"
 end

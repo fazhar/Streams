@@ -12,8 +12,9 @@
 										<% if current_user == post.user %>
 											<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_post_path(post.conversation, post) %></li>
 											<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), [post.conversation, post], method: :delete, data: {confirm: 'Are you sure?'} %></li> 
+										<% else %>
+											<li class="visible-xs"><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-user"), user_path(post.user) %></li>
 										<% end %>
-										<li class="visible-xs"><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-user"), user_path(post.user) %></li> 
 									</ul>
 								</nav>
 							</h5>

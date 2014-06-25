@@ -42,6 +42,21 @@ class ConversationsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def follow
+		@conversation = Conversation.find(params[:id])
+		current_user.follows.create(conversation: @conversation)
+		redirect_to root_path
+	end
+
+	def unfollow
+		@conversation = Conversation.find(params[:id])
+		@follow = current_user.follows.find_by_conversation_id(@conversation)
+		@follow.destroy
+		current_user.reload
+		@conversation.reload
+		redirect_to root_path
+	end
+
 	private
 		def conversation_params
 			params.require(:conversation).permit(:title, :description)

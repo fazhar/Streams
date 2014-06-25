@@ -1,10 +1,10 @@
 <div class="user-show">
 	<div class="top-nav">
-		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), user_home_path, class: "pull-left" %></small>
+		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left", data: {toggle: "tooltip", placement: "top"} , title: "Back"), user_home_path, class: "pull-left" %></small>
 		<% if @user == current_user %>
 			<nav>
 				<ul>
-					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-cog"), user_settings_path(@user) %></li>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-cog", data: {toggle: "tooltip", placement: "top"} , title: "Settings"), user_settings_path(@user) %></li>
 				</ul>
 			</nav>
 		<% end %>
@@ -22,11 +22,14 @@
 					<h5 class="custom-h5">Streams: <%= @user.conversations.count %></h5>
 				</div>
 				<div class="col-md-4">
-					<h5 class="custom-h5">Following: 0</h5>
+					<h5 class="custom-h5">Following: <%= @user.followed_conversations.count %></h5>
 				</div>
 			</div>
 		</div>
-		<h5 class="custom-h5">Following</h5>
+		<div class="followed-streams">
+			<h5 class="custom-h5">Following</h5>
+			<%= render @user.followed_conversations %>
+		</div>
 		<div class="created-streams">
 			<h5 class="custom-h5">Created</h5>
 			<%= render @user.conversations %>
