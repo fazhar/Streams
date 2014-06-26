@@ -13,7 +13,18 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
+	def routing_error
+		redirect_to root_path, alert: "That page does not exist."
+	end
+
 	private 
+
+		def logged_in?
+			if !current_user
+				redirect_to home_path, alert: "You must be logged in to continue."
+			end
+		end
+
 		def current_user
 			@current_user ||= User.find(session[:user_id]) if session[:user_id]
 		end

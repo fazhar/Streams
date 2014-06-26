@@ -28,4 +28,7 @@ Streams::Application.routes.draw do
 	match "/conversations/:conversation_id/posts/:id", to: "posts#update", via: 'patch', as: "update_conversation_post"
 	match "/conversations/:id/follow", to: 'conversations#follow', via: 'post', as: "follow_conversation"
 	match "/conversations/:id/unfollow", to: 'conversations#unfollow', via: 'delete', as: "unfollow_conversation"
+
+	#all path errors
+	match "*path", :to => "application#routing_error", :via => :all
 end

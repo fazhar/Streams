@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
 	layout "user"
 
+	before_action :logged_in?
+
 	def home
 		@posts = []
 		current_user.conversations.each do |conversation|

@@ -2,6 +2,9 @@ class PostsController < ApplicationController
 
 	layout 'user'
 
+	before_action :logged_in?
+	before_action :current_is_post_user, except: :new
+
 	def create
 		@conversation = Conversation.find(params[:conversation_id])
 		@post = @conversation.posts.new(post_params)
@@ -44,4 +47,13 @@ class PostsController < ApplicationController
 		def post_params
 			params.require(:post).permit(:title, :content)
 		end
+
+		def current_is_post_user
+			@conversation = Conversation.find(params[:conversation_id])
+			@post = @conversation.posts.find(params[:id])
+			if @post.user != current_user
+				redirect_to root_path, alert: "You are not the author of this post."
+			end
+		end
+
 end

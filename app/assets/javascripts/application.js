@@ -18,4 +18,5 @@
 
 $(function(){
   $('span').tooltip();
+  $(".alert").alert()
 });

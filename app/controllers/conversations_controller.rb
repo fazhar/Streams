@@ -1,6 +1,9 @@
 class ConversationsController < ApplicationController
 	layout 'user'
 
+	before_action :logged_in?
+	before_action :current_is_conversation_user, except: [:new, :show, :index]
+
 	def index
 	end
 
@@ -60,6 +63,13 @@ class ConversationsController < ApplicationController
 	private
 		def conversation_params
 			params.require(:conversation).permit(:title, :description)
+		end
+
+		def current_is_conversation_user
+			@conversation = Conversation.find(params[:id])
+			if current_user != @conversation.user
+				redirect_to root_path, alert: "You are not the author of this Stream."
+			end
 		end
 
 end
