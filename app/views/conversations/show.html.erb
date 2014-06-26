@@ -1,4 +1,4 @@
-<div class="stream-show">
+<div class="main">
 	<div class="top-nav">
 		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left", data: {toggle: "tooltip", placement: "top"} , title: "Back"), root_path, class: "pull-left" %></small>
 		<nav>
@@ -17,7 +17,7 @@
 		<h4 class="custom-h4"><%= @conversation.title %></h4>
 		<div class="description"><%= @conversation.description %></div>
 		<% if current_user %>
-			<%= link_to button_tag("Add a Post", class: "btn btn-custom btn-block"), new_conversation_post_path(@conversation) %>
+			<%= link_to button_tag("Add a Post", class: "btn btn-primary btn-block"), new_conversation_post_path(@conversation) %>
 		<% end %>
 		<div class="post-show">
 			<%= render @conversation.posts %>

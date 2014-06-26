@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619224012) do
+ActiveRecord::Schema.define(version: 20140625190638) do
 
   create_table "conversations", force: true do |t|
     t.string   "title"
@@ -58,6 +58,10 @@ ActiveRecord::Schema.define(version: 20140619224012) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "follows_id"
+    t.string   "email"
+    t.text     "about"
+    t.string   "location"
+    t.string   "image_source"
   end
 
   add_index "users", ["conversations_id"], name: "index_users_on_conversations_id"

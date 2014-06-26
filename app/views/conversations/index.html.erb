@@ -1,11 +1,11 @@
-<div class="stream-list">
+<div class="main">
 	<div class="container">
+		<h4 class="custom-h4">View All Streams </h4>
+		<%= link_to button_tag("Create a new Stream", class: "btn btn-primary btn-block"), new_conversation_path %>
 		<% if conversations %>
 			<% conversations.each do |conversation| %>
 				<%= render conversation %>
 			<% end %>
-		<% else %>
-			<button type="button" class="btn btn-custom btn-block" data-toggle="modal" data-target="#new-post">Create a new Stream</button>
 		<% end %>
 	</div>
 </div>

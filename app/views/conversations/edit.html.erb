@@ -1,4 +1,4 @@
-<div class="stream-edit">
+<div class="main">
 	<div class="top-nav">
 		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), conversation_path(@conversation), class: "pull-left" %></small>
 	</div>
@@ -15,7 +15,7 @@
 			<div class="form-group">
 				<%= f.text_area :description, class: "form-control", placeholder: "Description of your Stream" %>
 			</div>
-			<%= f.submit "Save", type: "submit", class: "btn btn-custom" %>
+			<%= f.submit "Save", type: "submit", class: "btn btn-primary" %>
 		<% end %>
 	</div>
 

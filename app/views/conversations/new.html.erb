@@ -1,4 +1,4 @@
-<div class="stream-new">
+<div class="main">
 	<% if @conversation.errors.any? %>
 		<%= render 'conversations/error_explain' %>
 	<% end %>
@@ -10,6 +10,6 @@
 		<div class="form-group">
 			<%= f.text_area :description, class: "form-control", placeholder: "Description of your Stream" %>
 		</div>
-		<%= f.submit "Create", type: "submit", class: "btn btn-custom" %>
+		<%= f.submit "Create", type: "submit", class: "btn btn-primary" %>
 	<% end %>
 </div>

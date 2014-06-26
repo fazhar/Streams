@@ -13,6 +13,16 @@ class User < ActiveRecord::Base
 			user.provider = auth["provider"]
 			user.uid = auth["uid"]
 			user.name = auth["info"]["name"]
+			user.image_source = auth["info"]["image"]
+			if user.provider = "facebook"
+				user.location = auth["info"]["location"]
+				user.email = auth["info"]["email"]
+			elsif user.provider == "twitter"
+				user.location = auth["info"]["location"]
+				user.about = auth["info"]["description"]
+			else
+				user.email = auth["info"]["email"]
+			end
 		end
 	end
 

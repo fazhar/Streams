@@ -16,6 +16,7 @@ Streams::Application.routes.draw do
   	#users routes
 	match '/user/home', to: 'users#home', via: 'get', as: "user_home"
 	match '/user/:id/settings', to: 'users#settings', via: 'get', as: "user_settings"
+	match "/users/:id", to: "users#update", via: 'patch', as: "update_user"
 
 	#sessions routes
 	match "/auth/:provider/callback", to: "sessions#create", via: 'get'

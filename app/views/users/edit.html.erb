@@ -1,0 +1,28 @@
+<div class="main">
+	<div class="top-nav">
+		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left"), user_path(@user), class: "pull-left" %></small>
+	</div>
+
+	<div class="container">
+		<% if @user.errors.any? %>
+			<%= render 'conversations/error_explain' %>
+		<% end %>
+		<h4 class="custom-h4"> Edit Stream </h4>
+		<%= form_for :user, url: update_user_path(@user), method: :patch do |f| %>
+			<div class="form-group">
+				<%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+			</div>
+			<div class="form-group">
+				<%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+			</div>
+			<div class="form-group">
+				<%= f.text_area :about, class: "form-control", placeholder: "Enter a description of yourself" %>
+			</div>
+			<div class="form-group">
+				<%= f.text_field :location, class: "form-control", placeholder: "Location" %>
+			</div>
+			<%= f.submit "Save", type: "submit", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+
+</div>

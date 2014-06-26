@@ -3,7 +3,6 @@
 		<div class="title"><%= conversation.title %> <span class="name">by: <%= conversation.user.name %></span></div>
 			<nav>
 				<ul>
-					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-zoom-in", data: {toggle: "tooltip", placement: "top"} , title: "View Stream"), conversation_path(conversation) %></li>
 					<% if current_user == conversation.user %>
 						<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil", data: {toggle: "tooltip", placement: "top"} , title: "Edit"), edit_conversation_path(conversation) %></li>
 						<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove", data: {toggle: "tooltip", placement: "top"} , title: "Delete"), conversation_path(conversation), method: :delete, data: {confirm: 'Are you sure?'} %></li>
@@ -14,6 +13,7 @@
 							<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-bookmark", data: {toggle: "tooltip", placement: "top"} , title: "Follow"), follow_conversation_path(conversation), method: :post %></li>
 						<% end %>
 					<% end %>
+					<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-home", data: {toggle: "tooltip", placement: "top"} , title: "View"), conversation_path(conversation) %></li>
 				</ul> 
 			</nav>
 	</h5>

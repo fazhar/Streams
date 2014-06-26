@@ -10,11 +10,12 @@
 								<nav>
 									<ul>
 										<% if current_user == post.user %>
-											<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil"), edit_conversation_post_path(post.conversation, post) %></li>
-											<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove"), [post.conversation, post], method: :delete, data: {confirm: 'Are you sure?'} %></li> 
+											<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-pencil", data: {toggle: "tooltip", placement: "top"} , title: "Edit"), edit_conversation_post_path(post.conversation, post) %></li>
+											<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-remove", data: {toggle: "tooltip", placement: "top"} , title: "Delete"), [post.conversation, post], method: :delete, data: {confirm: 'Are you sure?'} %></li> 
 										<% else %>
-											<li class="visible-xs"><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-user"), user_path(post.user) %></li>
+											<li class="visible-xs"><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-user", data: {toggle: "tooltip", placement: "top"} , title: "Visit Profile"), user_path(post.user) %></li>
 										<% end %>
+										<li><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-home", data: {toggle: "tooltip", placement: "top"} , title: "Visit Stream"), conversation_path(post.conversation) %></li> 
 									</ul>
 								</nav>
 							</h5>
@@ -28,7 +29,7 @@
 			<div class="col-sm-2 hidden-xs">
 				<div class="right">
 					<div class="thumbnail-custom">
-						<%= image_tag "http://placehold.it/130x130", class: "img-circle hidden-xs", width: "75px", height: "75px" %>
+						<%= link_to image_tag(post.user.image_source, class: "img-circle hidden-xs", width: "75px", height: "75px"), user_path(post.user) %>
 						<div class="caption"><%= post.user.name %></div>
 					</div>
 				</div>

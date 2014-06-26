@@ -1,4 +1,4 @@
-<div class="user-show">
+<div class="main">
 	<div class="top-nav">
 		<small><%= link_to content_tag(:span,"", class: "glyphicon glyphicon-chevron-left", data: {toggle: "tooltip", placement: "top"} , title: "Back"), user_home_path, class: "pull-left" %></small>
 		<% if @user == current_user %>
@@ -12,7 +12,8 @@
 	<div class="container">
 		<h4 class="custom-h4"><%= @user.name %></h4>
 		<h5 class="custom-h5">About</h5>
-		<h5 class="custom-h5">Location</h5>
+		<div class="well well-sm"><%= @user.about %></div>
+		<h5 class="custom-h5">Located in <%= @user.location %></h5>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
