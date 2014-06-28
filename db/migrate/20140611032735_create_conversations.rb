@@ -5,7 +5,7 @@ class CreateConversations < ActiveRecord::Migration
             t.string :title
             t.text :description
             t.references :user, index: true
-            t.references :feeds, index: true
+            t.references :follows, index: true
             t.references :posts, index: true
 
             t.timestamps

@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :name
-      t.references :feed, index: true
+      t.references :follows, index: true
       t.references :conversations, index: true
       t.references :posts, index: true
 

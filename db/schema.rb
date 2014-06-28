@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625190638) do
+ActiveRecord::Schema.define(version: 20140628181255) do
 
   create_table "conversations", force: true do |t|
     t.string   "title"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 20140625190638) do
 
   add_index "posts", ["conversation_id"], name: "index_posts_on_conversation_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "user", force: true do |t|
+    t.text   "about"
+    t.string "location"
+    t.string "email"
+    t.string "image_source"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"
