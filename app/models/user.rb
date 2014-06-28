@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  	validates :email, format: { with: VALID_EMAIL_REGEX }
 
 	def self.from_omniauth(auth)
 		find_by_provider_and_uid(auth["provider"], auth[:uid])
