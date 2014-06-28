@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	layout 'user'
 
 	before_action :logged_in?
-	before_action :current_is_post_user, except: :new
+	before_action :current_is_post_user, except: [:new, :create]
 
 	def create
 		@conversation = Conversation.find(params[:conversation_id])

@@ -4,8 +4,12 @@ class User < ActiveRecord::Base
 	has_many :follows
 	has_many :followed_conversations, class_name: "Conversation", through: :follows, dependent: :destroy, source: :conversation
 
+	validates :name, presence: true
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+
 	def self.from_omniauth(auth)
-		find_by_provider_and_uid(auth["provider"], auth[:uid]) || create_with_omniauth(auth)
+		find_by_provider_and_uid(auth["provider"], auth[:uid])
 	end
 
 	def self.create_with_omniauth(auth)

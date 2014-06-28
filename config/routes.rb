@@ -24,6 +24,7 @@ Streams::Application.routes.draw do
 	match "/logout", to: "sessions#destroy", via: 'get'
 
 	#conversations routes
+	match "/all/conversations", to: "conversations#view_all", via: 'get', as: "view_all_conversations"
 	match "/conversations/:id", to: "conversations#update", via: 'patch', as: "update_conversation"
 	match "/conversations/:conversation_id/posts/:id", to: "posts#update", via: 'patch', as: "update_conversation_post"
 	match "/conversations/:id/follow", to: 'conversations#follow', via: 'post', as: "follow_conversation"

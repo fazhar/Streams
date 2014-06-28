@@ -4,6 +4,6 @@ class Conversation < ActiveRecord::Base
   has_many :followers, through: :follows, dependent: :destroy, source: :user
   has_many :posts, inverse_of: :conversation, dependent: :destroy
 
-  validates :title, presence: true, length: {minimum:5}
+  validates :title, presence: true, length: {minimum:3, maximum:50}
   validates :description, presence: true 
 end

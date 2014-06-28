@@ -2,7 +2,7 @@ class ConversationsController < ApplicationController
 	layout 'user'
 
 	before_action :logged_in?
-	before_action :current_is_conversation_user, except: [:new, :show, :index]
+	before_action :current_is_conversation_user, only: [:edit, :update, :destroy]
 
 	def index
 	end
@@ -58,6 +58,10 @@ class ConversationsController < ApplicationController
 		current_user.reload
 		@conversation.reload
 		redirect_to root_path
+	end
+
+	def view_all
+		@conversations = Conversation.all.sort_by(&:created_at).reverse
 	end
 
 	private

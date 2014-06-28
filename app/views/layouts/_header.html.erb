@@ -19,16 +19,16 @@
 		            	<li><button type="button" class="btn btn-custom navbar-btn hidden-xs"><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-log-out", data: {toggle: "tooltip", placement: "bottom"} , title: "Sign Out"), logout_path %></button></li>
 		            	<li><button class="btn btn-image-custom navbar-btn hidden-xs" type="button"><%= link_to image_tag(current_user.image_source, class: "img-circle", height: "32px", width: "32px"), user_path(current_user) %></button></li>
 		            	
-		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "PROFILE", user_path(current_user) %></button></li>
-		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "ADD STREAM", new_conversation_path %></button></li>
-		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "MY STREAMS", conversations_path %></button></li>
-		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "SETTINGS", user_settings_path(current_user) %></button></li>
-		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "SIGN OUT", logout_path %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "Profile", user_path(current_user) %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "Add Stream", new_conversation_path %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "My Streams", conversations_path %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "Settings", user_settings_path(current_user) %></button></li>
+		            	<li><button type="button" class="btn btn-custom navbar-btn visible-xs"><%= link_to "Sign Out", logout_path %></button></li>
 					<% else %>
-						<li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "ABOUT", about_path %></button></li>
-			            <li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "CONTACT", contact_path %></button></li>
-			            <li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "HELP", help_path %></button></li>
-						<li><button type="button" class="btn btn-custom navbar-btn" data-toggle="modal" data-target="#login-modal">LOGIN</button></li>
+						<li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "About", about_path %></button></li>
+			            <li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "Contact", contact_path %></button></li>
+			            <li><button type="button" class="btn btn-custom navbar-btn"><%= link_to "Help", help_path %></button></li>
+						<li><button type="button" class="btn btn-custom navbar-btn" data-toggle="modal" data-target="#login-modal">Login</button></li>
 					<% end %>
 				</ul>
 			</div>

@@ -15,7 +15,7 @@
 
 	<div class="container">
 		<h4 class="custom-h4"><%= @conversation.title %></h4>
-		<div class="description"><%= @conversation.description %></div>
+		<div class="description"><p class="wordwrap"><%= @conversation.description %></p></div>
 		<% if current_user %>
 			<%= link_to button_tag("Add a Post", class: "btn btn-primary btn-block"), new_conversation_post_path(@conversation) %>
 		<% end %>

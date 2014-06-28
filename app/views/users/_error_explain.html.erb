@@ -1,0 +1,12 @@
+<div class="panel panel-danger">
+	<div class="panel-heading">
+		<h5><%= pluralize(@user.errors.count, "Error") %> Prohibited your changes from being saved.</h5>
+	</div>
+	<div class="panel-body">
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>

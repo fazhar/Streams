@@ -5,7 +5,7 @@
 
 	<div class="container">
 		<% if @user.errors.any? %>
-			<%= render 'conversations/error_explain' %>
+			<%= render 'users/error_explain' %>
 		<% end %>
 		<h4 class="custom-h4"> Edit Stream </h4>
 		<%= form_for :user, url: update_user_path(@user), method: :patch do |f| %>

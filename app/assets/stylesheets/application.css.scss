@@ -89,6 +89,45 @@ header {
 		li {
 			background-color: inherit;
 		}
+
+		input {
+			border-radius: 20px;
+			background-color: inherit;
+			border: none;
+			color: white;
+			line-height: 1;
+			border: 2px solid white;
+			border-right: none;
+			&:focus{
+				box-shadow: none;
+				border: 2px solid white;
+				border-right: 0px;
+			}
+		}
+
+		.navbar-form {
+			margin-top: 10px;
+			padding-right: 0;
+		}
+
+		.form-control {
+			height: 30px;
+			padding: 5px 12px;
+		}
+
+		.input-group-btn {
+			button {
+				border-radius: 20px;
+				font-weight: 300;
+				color: white;
+				padding: 5px 12px;
+				padding-left: 8px;
+				background-color: inherit;
+				border: 2px solid white;
+				border-left: 0;
+				height: 30px;
+			}
+		}
 	}
 
 	a {
@@ -188,10 +227,18 @@ header {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	text-align: center;
+	color: #777;
+	font-weight: 300;
 
 	.btn-block {
 		margin-top: 10px;
 		margin-bottom: 10px;
+	}
+
+	.no-activity {
+		p {
+			padding-top: 10px;
+		}
 	}
 
 	.post-show {
