@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
 			elsif user.provider == "twitter"
 				user.location = auth["info"]["location"]
 				user.about = auth["info"]["description"]
+				user.email = "addyous@email.com"
 			else
 				user.email = auth["info"]["email"]
 			end
