@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+  	validates :email, format: { with: VALID_EMAIL_REGEX }
 
 	def self.from_omniauth(auth)
 		find_by_provider_and_uid(auth["provider"], auth[:uid])
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 			elsif user.provider == "twitter"
 				user.location = auth["info"]["location"]
 				user.about = auth["info"]["description"]
-				user.email = "addyous@email.com"
+				user.email = "addyours@email.com"
 			else
 				user.email = auth["info"]["email"]
 			end
