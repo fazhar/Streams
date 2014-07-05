@@ -1,14 +1,17 @@
-<%= provide :title, "About Us" %>
+<%= provide :title, "About" %>
 
 <div class="about container-fluid">
 	<div class="row">
-		<div class="col-md-9">
-			<h3>About Me</h3>
-			<p>Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb. Find me in app/views/static_pages/about.html.erb.</p>
-		</div>
-		<div class="hidden-xs hidden-sm col=md-3">
-			<%= image_tag("http://placehold.it/200x250") %>
+		<h3>About</h3>
+		<div class="col-sm-offset-2 col-md-offset-3 col-lg-offset-3 col-sm-8 col-md-6 col-lg-6">
+			<div class="letter">
+				<p> Hello, <br> <br>
+					I'd like to start by thanking you for checking out Streams. I built the first version of this website using Ruby on Rails over the summer following my first year at UC Berkeley. Streams was the first web application that I ever built and I hope you enjoy your time here.
+					<br><br> Sincerely, <br><br>Fazil Azhar</p>
+				<%= image_tag("profile.jpg", class: "img-circle") %>
+			</div>
+
 		</div>
 	</div>
-	
+
 </div>

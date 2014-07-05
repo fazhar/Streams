@@ -39,7 +39,7 @@ $colHighlight   : #e7e7e7;
 	border-color: $bgHighlight;
 	.navbar-brand {
 		color: $colDefault;
-		&:hover, &:focus { 
+		&:hover, &:focus {
 			color: $colHighlight; }}
 	.navbar-text {
 		color: $colDefault; }
@@ -88,45 +88,6 @@ header {
 		margin-bottom: 0px;
 		li {
 			background-color: inherit;
-		}
-
-		input {
-			border-radius: 20px;
-			background-color: inherit;
-			border: none;
-			color: white;
-			line-height: 1;
-			border: 2px solid white;
-			border-right: none;
-			&:focus{
-				box-shadow: none;
-				border: 2px solid white;
-				border-right: 0px;
-			}
-		}
-
-		.navbar-form {
-			margin-top: 10px;
-			padding-right: 0;
-		}
-
-		.form-control {
-			height: 30px;
-			padding: 5px 12px;
-		}
-
-		.input-group-btn {
-			button {
-				border-radius: 20px;
-				font-weight: 300;
-				color: white;
-				padding: 5px 12px;
-				padding-left: 8px;
-				background-color: inherit;
-				border: 2px solid white;
-				border-left: 0;
-				height: 30px;
-			}
 		}
 	}
 
@@ -276,7 +237,7 @@ header {
 		.panel-body {
 			text-align: left;
 			color: #777;
-			font-weight: 
+			font-weight:
 			ul {
 				padding-left: 5px;
 				margin-bottom:0;
@@ -288,7 +249,7 @@ header {
 
 footer {
 	padding-right: 2%;
-	padding-left: 2%; 
+	padding-left: 2%;
 	margin-top: 0px;
 	padding-top: 5px;
 	border-top: 1px solid #e7e7e7;
@@ -304,7 +265,7 @@ footer {
 	small {
 		float: left;
 	}
-	
+
 	ul {
 		float: right;
 		list-style: none;
@@ -321,6 +282,13 @@ footer {
 
 	text-align: center;
 
+	.modal-content {
+		border-radius: 0;
+	}
+
+	.modal-header {
+		padding-bottom: 5px;
+	}
 	.modal-title {
 		color: #777;
 		font-weight: 300;
@@ -374,4 +342,4 @@ footer {
 	white-space: -o-pre-wrap; /* Opera 7 */
 	white-space: -moz-pre-wrap; /* Mozilla */
 	word-wrap: break-word; /* IE 5+ */
-} 
+}

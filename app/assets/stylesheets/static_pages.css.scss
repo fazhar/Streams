@@ -8,40 +8,41 @@
 		border-radius: 0px !important;
 		padding-top: 24px;
 		margin-bottom: 0;
+		text-align: center;
 		color: white;
 		font-weight: 300;
+		height: 478px;
 		width: 100%;
 
-		.col-md-7 p{
-			font-size: 16px;
-		}
-
-		.custom-h3 {
-			font-weight: 300;
-			padding-top: 5px;
-			padding-bottom: 5px;
+		p{
+			font-size: 20px;
+			padding-bottom: 15px;
 		}
 
 		h2 {
+			text-transform: uppercase;
+			padding-top: 85px;
 			padding-bottom: 10px;
+			font-size: 25px;
 			text-align: center;
-			font-weight: 300;
-		}
-		img {
-			border-radius: 15px;
+			font-weight: 200;
 		}
 
-		.description-buttons {
+		.description-button {
 			text-align: center;
-			button {
+
+			.btn {
 				background-color: inherit;
 				color: white;
-				border: 2px solid white;
-				border-radius: 20px;
+				border: 1px solid white;
+				border-radius: 0;
+				font-size: 18px;
+				text-transform: uppercase;
 				font-weight: 300;
+				padding: 15px 100px 15px 100px;
 				&:hover {
 					color: #e7e7e7;
-					border: 2px solid #e7e7e7;
+					border: 1px solid #e7e7e7;
 				}
 			}
 		}
@@ -49,8 +50,8 @@
 
 	.how-it-works {
 
-		border: 5px solid #e7e7e7;
-		background-color: #eee;
+		padding-top: 15px;
+		background-color: #f5f5f5;
 
 		h3 {
 			margin-top: 0;
@@ -65,19 +66,28 @@
 		.thumbnail {
 			padding: 0;
 			border-radius: 0;
+			box-shadow: 0px 10px 5px -5px #ccc;
+
 			.caption {
-				color: #333;
-				background-color: #eee;
+				color: #777;
+				font-weight: 300;
+				background-color: white;
+				h4 {
+					font-weight: 300;
+					text-align: center;
+				}
+
 			}
 		}
 
 		img {
-			width: 100%
+			width: 100%;
+			margin-bottom: 0;
 		}
 	}
 }
 
-.about, .contact, .help {
+@mixin main-layout{
 	width: 95%;
 	padding-top: 25px;
 	padding-bottom: 25px;
@@ -88,43 +98,61 @@
 }
 
 .about {
-
+	@include main-layout;
 	text-align: center;
 	h3 {
-		font-weight: 300;
-		text-align: center;
+		padding-bottom: 15px;
+	}
+
+	.letter {
+		font-size: 15px;
+		padding: 25px;
+		background-color: #e7e7e7;
+		box-shadow: 0px 10px 5px -5px #ccc;
+	}
+
+	img {
+		border: 2px solid #428bca;
+		height: 100px;
+		width: 100px;
 	}
 }
 
 .contact {
-
+	@include main-layout;
 	text-align: center;
-
-	.pager li > a, .pager li > span {
-		border:none;
-		&:hover {
-			background-color: inherit;
-		}
+	h3 {
+		padding-bottom:15px;
 	}
 
+	.info {
+		background-color: #e7e7e7;
+		padding: 25px;
+		box-shadow: 0px 10px 5px -5px #ccc;
+		.pager li > a, .pager li > span {
+			border:none;
+			background-color: inherit;
+			&:hover {
+				background-color: inherit;
+			}
+		}
+	}
 }
 
 .help {
+	@include main-layout;
 	text-align: left;
-
 	h4 {
 		padding-bottom: 15px;
 	}
-
 	h5 {
-		padding-top: 53px; 
+		font-weight: bold;
+		padding-top: 53px;
 		margin-top: -53px;
 	}
-
 	.sidebar {
 	    margin-bottom: 20px;
 	}
-
 	.sidebar .nav>li>a {
 	    color: #999;
 	    padding: 4px 20px;
@@ -132,13 +160,12 @@
 	    font-weight: 300;
 	    white-space: pre-wrap;
 	}
-
 	/* active & hover links */
-	.sidebar .nav>.active>a, 
-	.sidebar .nav>li>a:hover, 
-	.sidebar .nav>li>a:focus {                
-	    text-decoration: none;          
-	    background-color: transparent;  
-	    border-left: 2px solid #1164b1; 
+	.sidebar .nav>.active>a,
+	.sidebar .nav>li>a:hover,
+	.sidebar .nav>li>a:focus {
+	    text-decoration: none;
+	    background-color: transparent;
+	    border-left: 2px solid #1164b1;
 	}
 }
